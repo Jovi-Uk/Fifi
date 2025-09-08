@@ -37,3 +37,6 @@ seaborn>=0.11.0
 
 # Security (for production)
 cryptography>=3.4.0
+
+# Gunicorn
+gunicorn==21.2.0
