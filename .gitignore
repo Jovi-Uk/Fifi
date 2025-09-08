@@ -1,0 +1,53 @@
+# Virtual Environment
+venv/
+.venv/
+./venv/
+env/
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE / Editor specific
+.vscode/
+.idea/
+
+# Instance folder (if you have one)
+instance/
+
+# Backup files
+*.bak
+
+# macOS
+.DS_Store
+
+# Python tooling & caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.cache/
+htmlcov/
+.coverage
+.coverage.*
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Logs
+logs/
+*.log
+
+# Env variants
+.env.*
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Utility scripts
+strip_comments.py

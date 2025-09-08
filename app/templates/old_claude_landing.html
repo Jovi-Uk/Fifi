@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifi - The Future of Virtual Try-On</title>
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    
+    
+</head>
+<body>
+    
+    <nav class="nav-bar" id="navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;">
+            <div class="nav-logo" style="font-weight: bold; font-size: 1.5rem;">Fifi</div>
+            <ul class="nav-links" style="display: flex; list-style: none; gap: 2rem;">
+                <li><a href="#demo">Current Demo</a></li>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#vision">Future Vision</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <section class="hero-section">
+        <div class="video-container">
+            <div class="video-glow"></div>
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="{{ url_for('static', filename='media/video_1.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Fifi</h1>
+            <p class="hero-subtitle">The Future of Virtual Try-On</p>
+        </div>
+    </section>
+
+    
+    <section class="section text-center">
+        <div class="container">
+            <h2>Fifi is an AI fitting room built for every body.</h2>
+            <p class="text-muted">
+                Seamlessly create your 3D avatar and virtually try on clothes with the confidence of a true-to-life fit.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="problem" class="section problem-section">
+        <div class="container">
+            <h2 class="section-headline">
+                Online shopping is <span class="gradient-text-pink">broken</span>.
+            </h2>
+            <p class="text-muted">
+                Billions lost. Confidence shattered. Environment damaged.
+            </p>
+            
+            <div class="problem-visual">
+                <div class="problem-stat">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Returns due to<br>fit issues</div>
+                </div>
+                <div class="problem-stat">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">Cart abandonment<br>from size uncertainty</div>
+                </div>
+                <div class="problem-stat">
+                    <div class="stat-number">$428B</div>
+                    <div class="stat-label">Annual cost<br>to fashion industry</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="demo" class="section">
+        <div class="container">
+            <h2 class="text-center">Visual Journey</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <div class="gallery-item">
+                            <div class="image-glow" style="background: linear-gradient(135deg, #ff6b6b, #4ecdc4);"></div>
+                            <img src="{{ url_for('static', filename='media/image_2.png') }}" alt="Body Measurement Capture">
+                            <div class="slide-caption">
+                                <h5>Precise Measurement Capture</h5>
+                                <p class="text-muted">Our AI-guided photo system ensures accurate body modeling</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="gallery-item">
+                            <div class="image-glow" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                            <img src="{{ url_for('static', filename='media/image_5.jpg.webp') }}" alt="3D model generation">
+                            <div class="slide-caption">
+                                <h5>Instant 3D Generation</h5>
+                                <p class="text-muted">Watch as your measurements transform into a 3D avatar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="gallery-item">
+                            <div class="image-glow" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                            <img src="{{ url_for('static', filename='media/image_1.jpg') }}" alt="Model comparison">
+                            <div class="slide-caption">
+                                <h5>Smart Body Matching</h5>
+                                <p class="text-muted">Our SMPL algorithm finds your perfect body double</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="vision" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center">The Future of Fifi</h2>
+            <div class="vision-container mt-lg">
+                <div class="vision-text">
+                    <h4>Hyper-Realistic Virtual Try-On</h4>
+                    <p class="text-muted">
+                        Imagine seeing yourself in any outfit before you buy it. Not just a flat image, 
+                        but a living, breathing representation of how clothes will actually fit, move, 
+                        and drape on your unique body shape.
+                    </p>
+                    <div class="vision-features mt-lg">
+                        <div class="vision-feature">
+                            <span class="vision-icon">🎨</span>
+                            <div>
+                                <h5>Photorealistic Graphics</h5>
+                                <p class="text-muted">Skin texture, fabric physics, and lighting so real you'll forget it's virtual</p>
+                            </div>
+                        </div>
+                        <div class="vision-feature">
+                            <span class="vision-icon">📱</span>
+                            <div>
+                                <h5>Depth Sensor Integration</h5>
+                                <p class="text-muted">Leveraging modern phone technology for millimeter-accurate body scanning</p>
+                            </div>
+                        </div>
+                        <div class="vision-feature">
+                            <span class="vision-icon">🛍️</span>
+                            <div>
+                                <h5>Universal Shopping</h5>
+                                <p class="text-muted">Try on clothes from any retailer in one unified virtual wardrobe</p>
+                            </div>
+                        </div>
+                        <div class="vision-feature">
+                            <span class="vision-icon">🚶</span>
+                            <div>
+                                <h5>Dynamic Movement</h5>
+                                <p class="text-muted">See how outfits look while walking, sitting, or moving naturally</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vision-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <video class="vision-video" autoplay muted loop playsinline>
+                                <source src="{{ url_for('static', filename='media/video_1.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="journey" class="section">
+        <div class="container">
+            <h2 class="section-headline text-center">
+                The journey to <span class="gradient-text">hyperrealism</span>.
+            </h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 1 - Now</div>
+                        <h3 class="timeline-title">SMPL Foundation</h3>
+                        <p class="timeline-description">Basic body shape modeling with parametric models. The proof of concept that started it all.</p>
+                    </div>
+                    <div class="timeline-visual"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 2</div>
+                        <h3 class="timeline-title">Depth Sensing</h3>
+                        <p class="timeline-description">iPhone LiDAR. Android ToF. Millimeter-precision body scanning in your pocket.</p>
+                    </div>
+                    <div class="timeline-visual"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 3</div>
+                        <h3 class="timeline-title">Photorealism</h3>
+                        <p class="timeline-description">PS5-quality rendering. Realistic skin, accurate proportions, your digital twin.</p>
+                    </div>
+                    <div class="timeline-visual"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="section cta-section">
+        <div class="container cta-content">
+            <h2>Ready to Join the Revolution?</h2>
+            <p>Try our demo or partner with us to change fashion forever.</p>
+            <div class="cta-buttons mt-lg">
+                <a href="/demo" class="btn btn-secondary btn-lg">Try The Demo</a>
+                <button class="btn btn-primary btn-lg" onclick="openPartnerModal()">Partner With Us</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer section bg-dark">
+        <div class="container text-center">
+            <p class="text-muted">&copy; 2025 Fifi. All rights reserved.</p>
+            <a href="#" class="text-muted" style="margin: 0 1rem;">Privacy</a>
+            <a href="#" class="text-muted" style="margin: 0 1rem;">Terms</a>
+        </div>
+    </footer>
+
+    
+    <div id="partnerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePartnerModal()">&times;</span>
+            <h2>Partner With Us</h2>
+            <p>Join us in revolutionizing the fashion industry</p>
+            
+            <form id="partnerForm" action="contact.py" method="GET">
+                <div class="form-group">
+                    <label for="partnerName" class="form-label">Name *</label>
+                    <input type="text" id="partnerName" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="partnerEmail" class="form-label">Email *</label>
+                    <input type="email" id="partnerEmail" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="partnerMessage" class="form-label">Message *</label>
+                    <textarea id="partnerMessage" name="message" rows="5" maxlength="1000" class="form-control" required placeholder="Tell us about your interest..."></textarea>
+                    <span class="char-count">0 / 1000</span>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const track = document.getElementById('carouselTrack');
+
+        function showSlide(index) {
+            if (!track || !slides.length) return;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[index]) dots[index].classList.add('active');
+        }
+
+        if (dots.length > 0) {
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+            // Auto-advance carousel
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+
+        // Modal Functions
+        function openPartnerModal() {
+            document.getElementById('partnerModal').style.display = 'flex';
+            document.getElementById('partnerModal').style.alignItems = 'center';
+            document.getElementById('partnerModal').style.justifyContent = 'center';
+
+        }
+
+        function closePartnerModal() {
+            document.getElementById('partnerModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('partnerModal');
+            if (event.target == modal) {
+                closePartnerModal();
+            }
+        }
+
+        // Char counter for modal textarea
+        const messageTextarea = document.getElementById('partnerMessage');
+        const charCountSpan = document.querySelector('.char-count');
+        if(messageTextarea) {
+            messageTextarea.addEventListener('input', () => {
+                const currentLength = messageTextarea.value.length;
+                charCountSpan.textContent = `${currentLength} / 1000`;
+            });
+        }
+        
+        // Handle form submission
+        function handlePartnerSubmit(event) {
+            event.preventDefault();
+            console.log('Form submitted');
+            alert('Thank you! Your message has been sent.');
+            closePartnerModal();
+        }
+        // Handle form submission
+        function handlePartnerSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('partnerName').value,
+                email: document.getElementById('partnerEmail').value,
+                phone: document.getElementById('partnerPhone').value,
+                message: document.getElementById('partnerMessage').value
+            };
+            
+            // Show loading state
+            const submitBtn = document.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Make the API call to your Flask backend
+            fetch('/api/partner-inquiry', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (typeof showToast !== 'undefined') {
+                    showToast('Thank you for your interest! We\'ll be in touch soon.', 'success');
+                } else {
+                    alert('Thank you for your interest! We\'ll be in touch soon.');
+                }
+                closePartnerModal();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                if (typeof showToast !== 'undefined') {
+                    showToast('There was an error submitting your request. Please try again.', 'error');
+                } else {
+                    alert('There was an error submitting your request. Please try again.');
+                }
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
+        }
+    </script>
+</body>
+</html>

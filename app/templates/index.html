@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Your Avatar - Fifi</title>
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+<body>
+    
+    <nav class="nav-container">
+        <div class="container">
+            <div class="nav-bar">
+                <a href="{{ url_for('main.landing') }}" class="nav-logo">Fifi</a>
+                <div class="nav-links">
+                    <a href="{{ url_for('main.landing') }}">Home</a>
+                    <a href="{{ url_for('main.demo') }}" class="active">Generate Avatar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main class="form-container">
+        <div class="form-header">
+            <h1 class="form-title">Create Your 3D Avatar</h1>
+            <p class="form-subtitle">Enter your measurements to generate a personalized avatar</p>
+        </div>
+
+        
+        <div class="form-progress">
+            <div class="progress-step active">
+                <div class="progress-dot"></div>
+                <span class="progress-label">Basic Info</span>
+            </div>
+            <div class="progress-step">
+                <div class="progress-dot"></div>
+                <span class="progress-label">Measurements</span>
+            </div>
+            <div class="progress-step">
+                <div class="progress-dot"></div>
+                <span class="progress-label">Generate</span>
+            </div>
+        </div>
+        <div class="form-progress-bar"></div>
+
+        
+        <form id="avatarForm" class="avatar-form card">
+            
+            <div class="form-section">
+                <h2 class="section-title">Select Your Gender</h2>
+                <div class="gender-selection">
+                    <div class="gender-option">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male" class="gender-label">
+                            <span class="gender-icon">👨</span>
+                            <span>Male</span>
+                        </label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <label for="female" class="gender-label">
+                            <span class="gender-icon">👩</span>
+                            <span>Female</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="form-section">
+                <h2 class="section-title">Your Measurements</h2>
+                
+                <div class="form-group">
+                    <label for="height" class="form-label">
+                        Height
+                        <span class="help-icon" title="Your height in centimeters">?</span>
+                    </label>
+                    <div class="input-group">
+                        <input type="number" 
+                               id="height" 
+                               name="height" 
+                               class="form-control" 
+                               placeholder="Enter your height"
+                               min="120" 
+                               max="220" 
+                               step="0.1"
+                               required>
+                        <span class="input-unit">cm</span>
+                    </div>
+                    <div class="validation-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight" class="form-label">
+                        Weight
+                        <span class="help-icon" title="Your weight in kilograms">?</span>
+                    </label>
+                    <div class="input-group">
+                        <input type="number" 
+                               id="weight" 
+                               name="weight" 
+                               class="form-control" 
+                               placeholder="Enter your weight"
+                               min="30" 
+                               max="200" 
+                               step="0.1"
+                               required>
+                        <span class="input-unit">kg</span>
+                    </div>
+                    <div class="validation-feedback"></div>
+                </div>
+            </div>
+
+            
+            <div class="form-section">
+                <h2 class="section-title">Enhanced Accuracy (Optional)</h2>
+                <div class="timer-photo-section">
+                    <p class="section-description">
+                        Capture photos with our timer-guided system for more accurate 3D avatar generation.
+                        The timer ensures you have time to position yourself perfectly for each pose.
+                    </p>
+                    
+                    <div class="photo-status-display">
+                        <div class="photo-count-indicator">
+                            <span class="photo-count-number" id="photoCount">0</span>
+                            <span class="photo-count-label">/4 photos</span>
+                        </div>
+                        <div id="photoStatus" class="photo-status">
+                            No photos captured yet
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="openCameraBtn" class="btn btn-secondary camera-btn">
+                        📷 Open Timer Camera
+                    </button>
+                    
+                    <div id="capturedPhotos" class="captured-photos-grid"></div>
+                </div>
+            </div>
+
+            
+            <div class="form-submit-section">
+                <button type="submit" id="generateBtn" class="btn btn-primary btn-lg submit-btn">
+                    Generate My Avatar
+                </button>
+            </div>
+        </form>
+    </main>
+
+    
+    <div id="cameraModal" class="camera-modal" style="display: none;">
+        <div class="camera-modal-content">
+            <div class="camera-header">
+                <h3>Timer Photo Capture</h3>
+                <button type="button" id="closeCameraBtn" class="close-btn">&times;</button>
+            </div>
+            
+            <div class="camera-body">
+                <div class="pose-instructions">
+                    <h4 id="poseInstruction">Stand facing the camera</h4>
+                    <p id="poseDescription" class="pose-description">
+                        Position yourself within the guide outline. Stand naturally with arms slightly away from your body.
+                    </p>
+                </div>
+                
+                <div class="camera-viewport">
+                    <video id="cameraVideo" autoplay playsinline></video>
+                    <div id="poseGuide" class="pose-guide front">Front</div>
+                    
+                    
+                    <div id="timerCountdown" class="timer-countdown" style="display: none;">
+                        <svg class="countdown-svg" width="120" height="120">
+                            <circle id="countdownCircle" class="countdown-circle" cx="60" cy="60" r="45"></circle>
+                            <circle id="progressRing" class="progress-ring" cx="60" cy="60" r="45"></circle>
+                        </svg>
+                        <div id="countdownNumber" class="countdown-number">5</div>
+                    </div>
+                </div>
+                
+                <div class="camera-controls">
+                    
+                    <div id="timerControls" class="timer-controls">
+                        <label class="timer-option">
+                            <input type="radio" name="timerDuration" id="timer5s" value="5" checked>
+                            <span class="timer-label">5s Timer</span>
+                        </label>
+                        <label class="timer-option">
+                            <input type="radio" name="timerDuration" id="timer10s" value="10">
+                            <span class="timer-label">10s Timer</span>
+                        </label>
+                    </div>
+                    
+                    <div class="timer-display" id="timerDisplay">5s timer selected</div>
+                    
+                    <button type="button" id="captureBtn" class="btn btn-primary capture-btn">
+                        📸 Capture Photo 1/4 (5s timer)
+                    </button>
+                    
+                    <button type="button" id="cancelTimerBtn" class="btn btn-secondary" style="display: none;">
+                        Cancel Timer
+                    </button>
+                    
+                    <button type="button" id="retakeBtn" class="btn btn-secondary" style="display: none;">
+                        Retake Photo
+                    </button>
+                </div>
+                
+                
+                <div class="photo-progress">
+                    <div id="step-0" class="progress-step active">Front</div>
+                    <div id="step-1" class="progress-step">Left</div>
+                    <div id="step-2" class="progress-step">Right</div>
+                    <div id="step-3" class="progress-step">Back</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="toastContainer"></div>
+
+    
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    
+    <script src="{{ url_for('static', filename='js/camera_controller.js') }}"></script>
+    
+    
+    <script src="{{ url_for('static', filename='js/avatar_analyzer.js') }}"></script>
+
+    <!-- Important: This is how we pass Flask data to JavaScript -->
+    <script>
+        // Flask can inject data that JavaScript can use
+        window.flaskData = {
+            generateApiUrl: "{{ url_for('api.generate_avatar') }}",
+            reportPageUrl: "{{ url_for('main.report') }}"
+        };
+    </script>
+</body>
+</html>

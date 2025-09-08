@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifi - The Future of Virtual Try-On</title>
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    
+    
+    <script src="{{ url_for('static', filename='js/landing.js') }}" defer></script>
+    
+    
+   
+</head>
+<body>
+    
+    <div class="nav-container">
+        <nav class="nav-bar" id="navbar">
+            <div class="nav-logo">Fifi</div>
+            <ul class="nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#vision">Future Vision</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#try-demo">Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <section class="hero-section">
+        <div class="video-container">
+            <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
+                <source src="{{ url_for('static', filename='media/video_1.mp4') }}" type="video/mp4">
+            </video>
+            <div class="video-glow"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-text="Fifi">Fifi</h1>
+            <p class="hero-subtitle">The Future of Virtual Try-On</p>
+        </div>
+    </section>
+
+    
+    <section class="intro-section">
+        <div class="intro-content">
+            <h2 class="intro-title">Fifi is an AI fitting room built for every body.</h2>
+            <p class="intro-subtitle">
+                Seamlessly create your 3D avatar and virtually try on clothes with the confidence of a true-to-life fit.
+            </p>
+        </div>
+    </section>
+
+    
+    <section class="panoramic-section" id="panoramicCarousel">
+        <div class="panoramic-container">
+            
+            <div class="panoramic-gradient-top"></div>
+            
+            
+            <div class="panoramic-track" id="panoramicTrack">
+                
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_1.png') }}" alt="Fashion Item 1">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_2.png') }}" alt="Fashion Item 2">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_3.png') }}" alt="Fashion Item 3">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_4.png') }}" alt="Fashion Item 4">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_5.png') }}" alt="Fashion Item 5">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_6.png') }}" alt="Fashion Item 6">
+                </div>
+                
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_1.png') }}" alt="Fashion Item 1">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_2.png') }}" alt="Fashion Item 2">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_3.png') }}" alt="Fashion Item 3">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_4.png') }}" alt="Fashion Item 4">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_5.png') }}" alt="Fashion Item 5">
+                </div>
+                <div class="panoramic-item">
+                    <img src="{{ url_for('static', filename='media/panoramic_6.png') }}" alt="Fashion Item 6">
+                </div>
+            </div>
+            
+            
+            <div class="panoramic-gradient-bottom"></div>
+        </div>
+    </section>
+
+    
+    <section id="current-demo" class="section">
+        <div class="section-content">
+            <h2 class="section-headline text-center">
+                What's new in <span class="gradient-text">Fifi</span>?
+            </h2>
+            <p class="hero-subhead text-center">
+                The latest iteration brings marked improvements to our capabilities.
+            </p>
+        </div>
+    </section>
+
+    
+    <section class="section feature-cards-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon lightning">⚡</div>
+                    <h3 class="feature-title">Ultra-fast analysis</h3>
+                    <p class="feature-description">
+                        Process dozens of body measurements instantly. 
+                        Our enhanced model is up to 10x faster than traditional fitting methods.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon edit">✏️</div>
+                    <h3 class="feature-title">Realize your style</h3>
+                    <p class="feature-description">
+                        Push the limits of personal expression with enhanced fabric simulation, 
+                        realistic draping, and accurate color representation.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon resolution">📐</div>
+                    <h3 class="feature-title">Exceptional accuracy</h3>
+                    <p class="feature-description">
+                        Our system captures body nuances with millimeter precision, 
+                        ensuring every curve and proportion is perfectly represented.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="problem" class="apple-problem-section problem-section-immersive">
+        
+        <div class="problem-video-container">
+            <video class="problem-video" id="problemVideo" autoplay muted loop playsinline>
+                <source src="{{ url_for('static', filename='media/Disgruntled_Shopper_Ordered_vs_Received.mp4') }}" type="video/mp4">
+            </video>
+            
+            <div class="problem-video-overlay"></div>
+    </div>
+
+        
+        <div class="problem-content-wrapper">
+        <div class="problem-content">
+            <h2 class="problem-headline">
+                <span class="gradient-text">"We aren't merely fixing</span>
+                <span class="gradient-text">returns. We're transforming</span>
+                <span class="gradient-text">confidence online for the</span>
+                <span class="gradient-text">entire fashion industry."</span>
+            </h2>
+
+                <div class="problem-details">
+            <div class="problem-statement">
+                <h3 class="problem-stat-number gradient-text">30%</h3>
+                <h4 class="problem-stat-title">Returns devastate profits</h4>
+                <p class="problem-stat-description">
+                    Nearly one in three online clothing purchases gets returned due to sizing issues. 
+                    This creates a massive logistics burden, erodes profit margins, and frustrates customers 
+                    who thought they ordered the right size. The environmental impact is staggering, with 
+                    millions of returned items ending up in landfills each year.
+                </p>
+            </div>
+
+            <div class="problem-statement">
+                <h3 class="problem-stat-number gradient-text">73%</h3>
+                <h4 class="problem-stat-title">Cart abandonment crisis</h4>
+                <p class="problem-stat-description">
+                    Size uncertainty is the silent conversion killer. Nearly three-quarters of shoppers 
+                    abandon their carts because they're unsure if clothes will fit. They spend hours 
+                    reading reviews, comparing size charts, and still feel anxious about ordering. 
+                    This hesitation costs retailers billions in lost sales every single day.
+                </p>
+            </div>
+
+            <div class="problem-statement">
+                <h3 class="problem-stat-number gradient-text">$428B</h3>
+                        <h4 class="problem-stat-title">Industry-wide catastrophe</h4>
+                <p class="problem-stat-description">
+                            The global fashion industry hemorrhages nearly half a trillion dollars annually 
+                            from fit-related issues. This isn't just about returns—it's lost customer lifetime value, 
+                            damaged brand reputation, and the enormous cost of reverse logistics. Traditional sizing 
+                            systems from the 1940s are failing in our diverse, global marketplace.
+                </p>
+            </div>
+        </div>
+            </div>
+        </div>
+        
+        
+        <button class="problem-video-play-btn" id="problemVideoPlayBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M8 5v14l11-7z" fill="currentColor"/>
+            </svg>
+        </button>
+    </section>
+    
+    
+    
+    <section id="vision" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center">The Future of Fifi</h2>
+            <div class="vision-container mt-lg">
+                <div class="vision-text">
+                    <h4>Hyper-Realistic Virtual Try-On</h4>
+                    <p class="text-muted">
+                        Imagine seeing yourself in any outfit before you buy it. Not just a flat image, 
+                        but a living, breathing representation of how clothes will actually fit, move, 
+                        and drape on your unique body shape.
+                    </p>
+                    <div class="vision-features mt-lg">
+                        <div class="vision-feature">
+                            <span class="vision-icon">🎨</span>
+                            <div>
+                                <h5>Photorealistic Graphics</h5>
+                                <p class="text-muted">Skin texture, fabric physics, and lighting so real you'll forget it's virtual</p>
+                            </div>
+                        </div>
+                        <div class="vision-feature">
+                            <span class="vision-icon">📱</span>
+                            <div>
+                                <h5>Depth Sensor Integration</h5>
+                                <p class="text-muted">Leveraging modern phone technology for millimeter-accurate body scanning</p>
+                            </div>
+                        </div>
+                        <div class="vision-feature">
+                            <span class="vision-icon">🛍️</span>
+                            <div>
+                                <h5>Universal Shopping</h5>
+                                <p class="text-muted">Try on clothes from any retailer in one unified virtual wardrobe</p>
+                            </div>
+                        </div>
+                        <div class="vision-feature">
+                            <span class="vision-icon">🚶</span>
+                            <div>
+                                <h5>Dynamic Movement</h5>
+                                <p class="text-muted">See how outfits look while walking, sitting, or moving naturally</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vision-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <video class="vision-video" autoplay muted loop playsinline>
+                                <source src="{{ url_for('static', filename='media/video_1.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="journey" class="section">
+        <div class="container">
+            <h2 class="section-headline text-center">
+                The journey to <span class="gradient-text">hyperrealism</span>.
+            </h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 1 - Now</div>
+                        <h3 class="timeline-title">SMPL Foundation</h3>
+                        <p class="timeline-description">Basic body shape modeling with parametric models. The proof of concept that started it all.</p>
+                    </div>
+                        <div class="timeline-visual">
+                            <img src="{{ url_for('static', filename='media/SMPL.png') }}" alt="Phase 1 visual">
+                        </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 2</div>
+                        <h3 class="timeline-title">Depth Sensing</h3>
+                        <p class="timeline-description">iPhone LiDAR. Android ToF. Millimeter-precision body scanning in your pocket.</p>
+                    </div>
+                        <div class="timeline-visual">
+                            <img src="{{ url_for('static', filename='media/Depth.png') }}" alt="Phase 2 visual">
+                        </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Phase 3</div>
+                        <h3 class="timeline-title">Photorealism</h3>
+                        <p class="timeline-description">Physically Based Rendering. Realistic skin, accurate proportions, your digital twin.</p>
+                    </div>
+                        <div class="timeline-visual">
+                            <img src="{{ url_for('static', filename='media/Photorealism.png') }}" alt="Phase 3 visual">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="section cta-section">
+        <div class="container cta-content">
+            <h2>Ready to Join the Revolution?</h2>
+            <p>Try our demo or partner with us to change fashion forever.</p>
+            <div class="cta-buttons mt-lg">
+                <a href="/demo" id="try-demo" class="btn btn-secondary btn-lg">Try The Demo</a>
+                <button class="btn btn-primary btn-lg" onclick="openPartnerModal()">Partner With Us</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer section bg-dark">
+        <div class="container text-center">
+            <p class="text-muted">&copy; 2025 Fifi. All rights reserved.</p>
+            <a href="#" class="text-muted" style="margin: 0 1rem;">Privacy</a>
+            <a href="#" class="text-muted" style="margin: 0 1rem;">Terms</a>
+        </div>
+    </footer>
+
+    
+    <div id="partnerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePartnerModal()">&times;</span>
+            <h2>Partner With Us</h2>
+            <p>Join us in revolutionizing the fashion industry</p>
+            
+            <form id="partnerForm" action="contact.py" method="GET">
+                <div class="form-group">
+                    <label for="partnerName" class="form-label">Name *</label>
+                    <input type="text" id="partnerName" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="partnerEmail" class="form-label">Email *</label>
+                    <input type="email" id="partnerEmail" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="partnerMessage" class="form-label">Message *</label>
+                    <textarea id="partnerMessage" name="message" rows="5" maxlength="1000" class="form-control" required placeholder="Tell us about your interest..."></textarea>
+                    <span class="char-count">0 / 1000</span>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
